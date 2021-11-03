@@ -1,3 +1,7 @@
 <app-todo-list [todos]="todos"></app-todo-list>
+<h2>Adicionar todo</h2>
+<form (submit)="addTodo()">
+  <input name="task" type="text" [(ngModel)]="task">
+  <button type="submit">Adicionar</button>
+</form>
 
-<app-todo-list [todos]="todos"></app-todo-list>

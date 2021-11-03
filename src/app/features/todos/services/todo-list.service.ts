@@ -6,11 +6,17 @@ import { Todo } from 'src/app/shared/types/todo.type';
 })
 export class TodoListService {
 
+
+
   constructor() {
     console.log('construtor todo list service');
    }
 
   markAsCompleted(todo: Todo) {
     todo.isCompleted = true;
+  }
+
+  markAsUnfinished(todo: Todo) {
+    todo.isCompleted = false;
   }
 }

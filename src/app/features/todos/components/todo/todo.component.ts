@@ -13,14 +13,9 @@ export class TodoComponent implements OnInit {
   @Input()
   todo!: Todo;
 
-  constructor(private todoListService: TodoListService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  @HostListener('click')
-  markAsCompleted() {
-    this.todoListService.markAsCompleted(this.todo);
   }
 
 }

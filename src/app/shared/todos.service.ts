@@ -21,4 +21,18 @@ export class TodosService {
   getTodos() {
     return this.todos;
   }
+
+  addTodo(task: string) {
+    this.todos.push({
+      id: (this.todos.length + 1).toString(),
+      task: task,
+      isCompleted: false,
+    });
+    return [...this.todos];
+  }
+
+  toggleTodo(todo: Todo): Todo {
+    todo.isCompleted = !todo.isCompleted;
+    return todo;
+  }
 }
