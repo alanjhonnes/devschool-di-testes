@@ -6,7 +6,19 @@ import { Todo } from './types/todo.type';
 })
 export class TodosService {
 
-  todos: Todo[] = [];
+  private todos: Todo[] = [
+    {
+      id: '1',
+      task: 'Aula DI',
+      isCompleted: false,
+    }
+  ];
 
-  constructor() { }
+  constructor() {
+    console.log('construtor todos service');
+  }
+
+  getTodos() {
+    return this.todos;
+  }
 }

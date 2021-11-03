@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, HostListener } from '@angular/core';
+import { Todo } from 'src/app/shared/types/todo.type';
+import { TodoListService } from '../../services/todo-list.service';
 
 @Component({
   selector: 'app-todo',
@@ -8,9 +10,17 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  todo!: Todo;
+
+  constructor(private todoListService: TodoListService) { }
 
   ngOnInit(): void {
+  }
+
+  @HostListener('click')
+  markAsCompleted() {
+    this.todoListService.markAsCompleted(this.todo);
   }
 
 }

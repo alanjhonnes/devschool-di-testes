@@ -9,5 +9,8 @@ import { LeafService } from 'src/app/shared/services/leaf.service';
 })
 export class DiComponent {
 
-  constructor(public flower: FlowerService, public leaf: LeafService) {}
+  constructor(
+    public flower: FlowerService,
+    public leaf: LeafService,
+    ) {}
 }
