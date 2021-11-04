@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Todo } from './types/todo.type';
+import { markAsCompleted } from './utils/todos.utils';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +16,12 @@ export class TodosService {
     }
   ];
 
-  constructor() {
+  constructor(private router: Router) {
     console.log('construtor todos service');
   }
 
   getTodos() {
+    console.log(this.router.isActive('', true));
     return this.todos;
   }
 
@@ -34,5 +37,9 @@ export class TodosService {
   toggleTodo(todo: Todo): Todo {
     todo.isCompleted = !todo.isCompleted;
     return todo;
+  }
+
+  markAsCompleted(todo: Todo): Todo {
+    return markAsCompleted(todo);
   }
 }
