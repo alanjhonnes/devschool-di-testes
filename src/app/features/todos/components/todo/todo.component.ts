@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, HostListener } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, HostListener, ChangeDetectorRef } from '@angular/core';
 import { Todo } from 'src/app/shared/types/todo.type';
 import { TodoListService } from '../../services/todo-list.service';
 
@@ -13,7 +13,7 @@ export class TodoComponent implements OnInit {
   @Input()
   todo!: Todo;
 
-  constructor() { }
+  constructor(public changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
   }

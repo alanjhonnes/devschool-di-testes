@@ -37,8 +37,7 @@ fdescribe('TodoComponent', () => {
       isCompleted: true,
       task: 'todo feito',
     }
-
-    fixture.detectChanges();
+    component.changeDetectorRef.detectChanges();
     const id2: HTMLElement = fixture.nativeElement.querySelector('#t-todo-id');
     expect(id2.textContent).toEqual(`Id: 2`);
 
